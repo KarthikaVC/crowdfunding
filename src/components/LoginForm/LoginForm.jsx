@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , useOutletContext } from "react-router-dom";
 
 function LoginForm() {
 
+const [, setLoggedIn] = useOutletContext();
 // State
 const[credentials,setCredentials] = useState({
     username: "",
@@ -36,13 +37,14 @@ const handleSubmit = async (event) => {
     if (credentials.username && credentials.password) {
         const { token } = await postData();
         window.localStorage.setItem("token", token);
+        setLoggedIn(true);
         navigate("/");
     }
 };
     return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} class="form-class">
         <div>
-            <label htmlFor="username">Username:</label>
+            <label htmlFor="username">Username: </label>
             <input
             type="text"
             id="username"
@@ -51,7 +53,7 @@ const handleSubmit = async (event) => {
             />
         </div>
         <div>
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password">Password: </label>
             <input
             type="password"
             id="password"

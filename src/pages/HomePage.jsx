@@ -1,10 +1,11 @@
 import React from "react";
-// import { allProjects } from "../data";
+
 import ProjectCard from "../components/ProjectCard/ProjectCard";
+import { Link } from "react-router-dom";
 
 import { useState , useEffect } from "react";
 
-export function HomePage(){
+function HomePage(){
     // State
     const [projectList,setProjectList] =useState([]);
 
@@ -20,18 +21,21 @@ export function HomePage(){
         setProjectList(data);
     });
     }, []);
-
+    
     return (
-    <div>
-    <h1>Grad ED</h1>
-    <p>To raise funds for students who are little low on funds and need financial support in doing their University Education.</p>
-    <p></p>
-    <div id="project-list">
-    {projectList.map((project,key)=>{
-        return <ProjectCard key={key} projectData={project} />;
-    }
+    <div className="container">
+        <h1>Projects</h1>
+        <div id="project-list">
+            {projectList.map((project,key)=>{
+            return <ProjectCard key={key} projectData={project} />;
+        }
     )}
+    </div>
+    <br/><br/>
+    <div>
+        <Link to="/login" className="btn-account-class">Start a Fundraiser</Link>
     </div>
     </div>
     );
 }
+export default HomePage;

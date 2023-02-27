@@ -2,6 +2,8 @@ import React from "react";
 // import { oneProject } from "../data";
 import {useState,useEffect} from "react";
 import {useParams} from "react-router-dom";
+import PledgeForm from "../components/PledgeForm/PledgeForm";
+import { Link } from "react-router-dom";
 
 function ProjectPage(){
     // State
@@ -23,20 +25,36 @@ function ProjectPage(){
     }, []);
 
     return (
-<div>
-<h2>{project.title}</h2> 
-<h3>Created at: {project.date_created}</h3>
-<h3>{`Status : ${project.is_open}`}</h3>
-<h3>Pledges:</h3>
-<ul>
-    {project.pledges.map((pledgeData,key)=>{
-        return (
-            <li key={key}>
-                {pledgeData.amount} from {pledgeData.supporter}
-            </li>
-        );
-    })}
-</ul>
+<div className="container">
+    <div className="row">
+        <div className="contact-left">
+            <h2 className="project-page-title">{project.title}</h2> 
+            <p><img src={project.image}/></p>
+            <h4>{project.description}</h4>
+            <h4>Created at: {project.date_created}</h4>
+            <h4>{`Status : ${project.is_open}`}</h4>
+            
+                <h4>Pledges:</h4>
+            <ul>
+                {project.pledges.map((pledgeData,key)=>{
+                    return (
+                        <li key={key}>
+                            {pledgeData.amount} from Supporter {pledgeData.supporter}
+                        </li>
+                    );
+                })}
+            </ul>
+        </div>
+        <div className="contact-right">
+            <h2 className="project-page-title">Make Donations</h2>
+                <PledgeForm/>
+            </div>
+        </div>  
+        <br/> <br/> 
+    <div>
+    <Link to="/projects/id" className="btn-account-class">Edit Project</Link>
+    <Link to= "/projects/deleteProject/4" className="btn-account-class">Delete Project</Link>
+    </div>     
 </div>
 
 );
