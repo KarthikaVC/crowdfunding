@@ -1,35 +1,30 @@
 import React from "react";
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
 
 function ViewUser(){
-    const [userList,setUserList] =useState();
-
-    console.log(userList);
-
+    const [user,setUser] =useState({});
+    const {id} =useParams();
+    console.log(id);
     // Adding for User View page 
     useEffect(() => {
-        //const baseURL = import.meta.env.VITE_API_URL;
-        fetch(`${import.meta.env.VITE_API_URL}users`)
-        .then((results) => {
-        return results.json();
-    })
-    .then((data) => {
-        setUserList(data);
-    });
-    }, []);
+        const fetchUser = async () => {
+            try {
+                const response = await fetch(`${import.meta.env.VITE_API_URL}users/${id}`);
+                const data = await response.json();
+                setUser(data);
+            } catch (err) {
+                console.log(err);
+            }
+        };
+        fetchUser();
+}, []);
 
     return (
         <div className="container">
             <h1>Profile page</h1>
-            {/* Added by me for user List printing
-        <div>
-        {userList.map((user,key)=>{
-            return <ViewUser key={key} projectData={user} />;
-        }
-        )} 
-        </div> */}
+            <h2>{user.username}</h2>
+            <h3>{user.email}</h3>
         </div>
 
     );

@@ -1,14 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link , useParams , useNavigate} from "react-router-dom";
+import { useState , useEffect } from "react";
 
 import './Nav.css'
 
 function Nav(props) {
 
     const { loggedIn, setLoggedIn } = props
-    
+    const { id } = useParams();
+    // enables redirect
+    const navigate = useNavigate();
+
     const handleClick = () => {
-        window.localStorage.removeItem("token")
-        setLoggedIn(false)
+        window.localStorage.removeItem("token");
+        setLoggedIn(false);
+        navigate("/");
     }
 
     return (
@@ -20,7 +25,7 @@ function Nav(props) {
             <li><Link to="/contactUs" >Contact Us</Link></li>
             <li>{!loggedIn && <Link to="/login" className="btn-account-class">Login In</Link>}</li>
             <li>{!loggedIn && <Link to="/register" className="btn-account-class">Sign Up</Link>}</li>
-            <li>{loggedIn && <Link to="/viewAccount" className="btn">View Account</Link>}</li>
+            <li>{loggedIn && <Link to={`/viewAccount/${id}`} className="btn">View Account</Link>}</li>
             <li>{loggedIn && <button className="btn-account-class" onClick={handleClick}>Sign Out</button>}</li>
         </ul>
         <div>

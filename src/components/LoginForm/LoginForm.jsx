@@ -42,7 +42,7 @@ const handleSubmit = async (event) => {
     }
 };
     return (
-    <form onSubmit={handleSubmit} class="form-class">
+    <form onSubmit={handleSubmit} className="form-class">
         <div>
             <label htmlFor="username">Username: </label>
             <input

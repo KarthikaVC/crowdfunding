@@ -52,8 +52,8 @@ function ProjectPage(){
         </div>  
         <br/> <br/> 
     <div>
-    <Link to="/projects/id" className="btn-account-class">Edit Project</Link>
-    <Link to= "/projects/deleteProject/4" className="btn-account-class">Delete Project</Link>
+    <Link to={`/projects/editProject/${id}`} className="btn-account-class">Edit</Link>
+    <Link to= {`/projects/deleteProject/${id}`} className="btn-account-class">Delete</Link>
     </div>     
 </div>
 

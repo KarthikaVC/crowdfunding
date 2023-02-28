@@ -3,19 +3,11 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 
-function ProjectForm(){
-    const [projects, setProjects] = useState({
-        // from JSON Raw Body in Deployed (default values)
-        // this is what you return at the bottom - your list might look different to mine. If so, don't worry!
-        "title": "",
-        "description": "",
-        "goal": null,
-        "image": "",
-        "is_open": "true",
-        "date_created":null
-    });
+function EditProject(){
+    const [projects, setProjects] = useState([]);
 
     const { id } = useParams();
+    console.log(id);
 
     // copies the original data, replaces the old data for each id/value pair to what is input in the form (changes state). this will be submitted to API below
     const handleChange = (event) => {
@@ -48,13 +40,15 @@ function ProjectForm(){
     const handleSubmit = async(event) => {
     event.preventDefault();
     if (authToken) {
+        setProjects()
         const postProject = await postData();
         navigate("/");
     }
 };
     return(
         <div className="container">
-        <form onSubmit={handleSubmit}>
+        <div>Edit Projects Page</div>
+        <form onSubmit={()=>handleSubmit(id)}>
             <div>
             <label htmlFor="title">Title:</label>
             <input
@@ -106,10 +100,10 @@ function ProjectForm(){
                 onChange={handleChange}
             />
             </div>
-            <button type="submit">Create Project</button>
+            <button type="submit">Update Project</button>
         </form>
         </div>
     );
 
 }
-export default ProjectForm;
+export default EditProject;

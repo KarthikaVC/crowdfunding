@@ -18,7 +18,9 @@ import About from "./pages/About";
 import ContactPage from "./pages/ContactPage";
 import ProjectForm from "./components/ProjectForm/ProjectForm";
 import ViewUser from "./components/User/ViewUser";
-import CreateUserForm from "./components/User/CreateUserForm";
+import Register from "./components/User/Register";
+import DeleteProject from "./components/ProjectForm/DeleteProject";
+import EditProject from "./components/ProjectForm/EditProject";
 
 
 const Layout = () => {
@@ -43,9 +45,10 @@ const router = createBrowserRouter(
       {path:"/projects",element:<ProjectForm/>,},
       {path:"/login",element:<LoginPage/>,},
       {path:"/pledges",element:<PledgeForm/>},
-      {path:"/projects/deleteProject/4",element:<HomePage/>,},
-      {path:"/viewAccount",element:<ViewUser/>},
-      {path:"/register",element:<CreateUserForm/>},
+      {path:"/projects/deleteProject/:id",element:<DeleteProject/>,},
+      {path:"/projects/editProject/:id",element:<EditProject/>,},
+      {path:"/viewAccount/:id",element:<ViewUser/>},
+      {path:"/register",element:<Register/>},
 ],
 }]  
 );
