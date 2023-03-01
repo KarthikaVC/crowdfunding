@@ -93,7 +93,7 @@ function PledgeForm() {
             <input
                 type="text"
                 id="project"
-                placeholder="needs to be auto-filled with current project"
+                placeholder="project ID"
                 onChange={handleChange}
             />
             </div>
