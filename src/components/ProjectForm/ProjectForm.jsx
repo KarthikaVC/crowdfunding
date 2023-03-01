@@ -54,9 +54,12 @@ function ProjectForm(){
 };
     return(
         <div className="container">
+        <div>
+            <h1>Start a New Fundraiser</h1>
+        </div>
         <form onSubmit={handleSubmit}>
             <div>
-            <label htmlFor="title">Title:</label>
+            <label htmlFor="title">Title: </label>
             <input
                 type="text"
                 id="title"
@@ -65,7 +68,7 @@ function ProjectForm(){
             />
             </div>
             <div>
-            <label htmlFor="description">Description:</label>
+            <label htmlFor="description">Description: </label>
             <input
                 type="text"
                 id="description"
@@ -74,7 +77,7 @@ function ProjectForm(){
             />
             </div>
             <div>
-            <label htmlFor="goal">Goal:</label>
+            <label htmlFor="goal">Goal: </label>
             <input 
                 type="number"
                 id="goal" 
@@ -82,7 +85,7 @@ function ProjectForm(){
             />
             </div>
             <div>
-            <label htmlFor="image">Image:</label>
+            <label htmlFor="image">Image: </label>
             <input
                 type="text"
                 id="image"
@@ -91,7 +94,7 @@ function ProjectForm(){
             />
             </div>
             <div>
-            <label htmlFor="is_open">is open:</label>
+            <label htmlFor="is_open">Status is open: </label>
             <input
                 type="checkbox"
                 id="is_open"
@@ -99,7 +102,7 @@ function ProjectForm(){
             />
             </div>
             <div>
-            <label htmlFor="date_created">Date Created:</label>
+            <label htmlFor="date_created">Date Created: </label>
             <input
                 type="date"
                 id="date_created"

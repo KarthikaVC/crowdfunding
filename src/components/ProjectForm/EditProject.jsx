@@ -16,6 +16,7 @@ function EditProject(){
         ...prevProjects,
         [id]: value,
         }));
+        console.log(projects)
     };
 
     const navigate = useNavigate();
@@ -23,7 +24,7 @@ function EditProject(){
 
     const postData = async () => {
         const response = await fetch(
-            `${import.meta.env.VITE_API_URL}projects/`,
+            `${import.meta.env.VITE_API_URL}projects/id`,
             {
                 method: "post",
                 headers: {

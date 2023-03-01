@@ -60,10 +60,10 @@ function PledgeForm() {
     };
 
     return (
-        <div>
+        <div className="container">
         <form onSubmit={handleSubmit}>
             <div>
-            <label htmlFor="amount">Amount:</label>
+            <label htmlFor="amount">Amount: </label>
             <input
                 type="number"
                 id="amount"
@@ -72,7 +72,7 @@ function PledgeForm() {
             />
             </div>
             <div>
-            <label htmlFor="comment">Comment:</label>
+            <label htmlFor="comment">Comment: </label>
             <input
                 type="text"
                 id="comment"
@@ -81,7 +81,7 @@ function PledgeForm() {
             />
             </div>
             <div>
-            <label htmlFor="anonymous">Anonymous:</label>
+            <label htmlFor="anonymous">Anonymous: </label>
             <input 
                 type="checkbox"
                 id="anonymous" 
@@ -89,7 +89,7 @@ function PledgeForm() {
             />
             </div>
             <div>
-            <label htmlFor="project">Project:</label>
+            <label htmlFor="project">Project: </label>
             <input
                 type="text"
                 id="project"
@@ -97,7 +97,7 @@ function PledgeForm() {
                 onChange={handleChange}
             />
             </div>
-            <button type="submit">Pledge</button>
+            <button type="submit">Donate</button>
         </form>
         </div>
     );

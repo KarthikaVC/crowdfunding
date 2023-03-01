@@ -19,15 +19,23 @@ function DeleteProject(props){
     });
     }, []);
 
-    
-        const handleYes=(id)=>{
-            projectList.splice(id-1,1);
+    const handleYes=(event)=>{
+            // projectList.splice(id-1,1);
+            // // console.log(projectList);
+            // setProjectList([...projectList])
             // console.log(projectList);
-            setProjectList([...projectList])
-            console.log(projectList);
-            navigate("/");
-        }
-        const handleNo=(id)=>{
+            // navigate("/");
+
+            setProjectList((prevProjectList) => {
+                const projects = [...prevProjectList]
+                projects.splice(id-1,1)
+                console.log(projects);
+                navigate("/");
+                return projects
+            });
+            
+        };
+    const handleNo=(id)=>{
             navigate("/");
         }
 

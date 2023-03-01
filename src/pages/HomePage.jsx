@@ -24,6 +24,11 @@ function HomePage(){
     
     return (
     <div className="container">
+    <br/>
+    <div>
+        <Link to="/login" className="btn-account-class">Start a Fundraiser</Link>
+    </div>
+    <br/>
         <h1>Projects</h1>
         <div id="project-list">
             {projectList.map((project,key)=>{
@@ -32,9 +37,7 @@ function HomePage(){
     )}
     </div>
     <br/><br/>
-    <div>
-        <Link to="/login" className="btn-account-class">Start a Fundraiser</Link>
-    </div>
+    
     </div>
     );
 }

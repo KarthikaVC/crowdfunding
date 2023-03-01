@@ -32,11 +32,20 @@ const postData = async () => {
     );
     return response.json();
 };
+
+const getUserId = async () => {
+    const userList = await fetch(`${import.meta.env.VITE_API_URL}users/`);
+    const parsedUserList = await userList.json();
+    const loggedUserData = parsedUserList.find((user) => user.username === credentials.username);
+    window.localStorage.setItem("uid", loggedUserData.id);
+};
+
 const handleSubmit = async (event) => {
     event.preventDefault();
     if (credentials.username && credentials.password) {
         const { token } = await postData();
         window.localStorage.setItem("token", token);
+        getUserId();
         setLoggedIn(true);
         navigate("/");
     }

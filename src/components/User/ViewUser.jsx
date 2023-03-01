@@ -1,6 +1,6 @@
 import React from "react";
 import { useState , useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams ,Link } from "react-router-dom";
 
 function ViewUser(){
     const [user,setUser] =useState({});
@@ -21,11 +21,20 @@ function ViewUser(){
 }, []);
 
     return (
-        <div className="container">
-            <h1>Profile page</h1>
-            <h2>{user.username}</h2>
-            <h3>{user.email}</h3>
-        </div>
+    <div className="container">
+            <h2 className="project-page-title">Profile Page</h2> 
+            <h4>Username : {user.username}</h4>
+            <h4>Email : {user.email}</h4>
+            <h4>First Name : {user.first_name}</h4>
+            <h4>Last Name : {user.last_name}</h4>
+        <br/><br/>
+        <div>
+        <Link to={`/users/update_profile/${id}`} className="btn-account-class">Edit</Link>
+        <Link to= {`/users/delete_user/${id}`} className="btn-account-class">Delete</Link>
+        <Link to= {`/users/change_pwd/${id}`} className="btn-account-class">Change Password</Link>
+        </div>  
+    </div>
+        
 
     );
 

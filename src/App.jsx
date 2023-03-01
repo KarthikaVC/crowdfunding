@@ -18,6 +18,9 @@ import About from "./pages/About";
 import ContactPage from "./pages/ContactPage";
 import ProjectForm from "./components/ProjectForm/ProjectForm";
 import ViewUser from "./components/User/ViewUser";
+import EditProfile from "./components/User/EditProfile";
+import DeleteUser from "./components/User/DeleteUser";
+import ChangePassword from "./components/User/ChangePassword";
 import Register from "./components/User/Register";
 import DeleteProject from "./components/ProjectForm/DeleteProject";
 import EditProject from "./components/ProjectForm/EditProject";
@@ -47,7 +50,10 @@ const router = createBrowserRouter(
       {path:"/pledges",element:<PledgeForm/>},
       {path:"/projects/deleteProject/:id",element:<DeleteProject/>,},
       {path:"/projects/editProject/:id",element:<EditProject/>,},
-      {path:"/viewAccount/:id",element:<ViewUser/>},
+      {path:"/users/:id",element:<ViewUser/>},
+      {path:"/users/update_profile/:id",element:<EditProfile/>,},
+      {path:"/users/delete_user/:id",element:<DeleteUser/>,},
+      {path:"/users/change_pwd/:id",element:<ChangePassword/>,},
       {path:"/register",element:<Register/>},
 ],
 }]  

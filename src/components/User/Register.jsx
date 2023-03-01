@@ -68,7 +68,7 @@ function Register(props){
             style={{
                 display: submitted ? '' : 'none',
             }}>
-            <h1>User successfully registered!!</h1>
+            <h3>User successfully registered!!</h3>
             </div>
         );
         };
@@ -86,9 +86,9 @@ function Register(props){
         };
 
     return (
-        <div>
+        <div className="container">
             <div>
-                <h1>User Registration</h1>
+                <h2 className="project-page-title">New User Registration</h2>
             </div>
 
             <div className="messages">
@@ -98,7 +98,7 @@ function Register(props){
 
         <form onSubmit={handleSubmit}>
             <div>
-            <label htmlFor="username">Username:</label>
+            <label htmlFor="username">Username: </label>
             <input
                 type="text"
                 id="username"
@@ -109,7 +109,7 @@ function Register(props){
             />
             </div>
             <div>
-            <label htmlFor="first_name">First name:</label>
+            <label htmlFor="first_name">First name: </label>
             <input
                 type="text"
                 id="first_name"
@@ -120,7 +120,7 @@ function Register(props){
             />
             </div>
             <div>
-            <label htmlFor="last_name">Last name:</label>
+            <label htmlFor="last_name">Last name: </label>
             <input 
                 type="text"
                 id="last_name"
@@ -131,7 +131,7 @@ function Register(props){
             />
             </div>
             <div>
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="email">Email: </label>
             <input
                 type="email"
                 id="email"
@@ -142,7 +142,7 @@ function Register(props){
             />
             </div>
             <div>
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password">Password: </label>
             <input
                 type="password"
                 id="password"

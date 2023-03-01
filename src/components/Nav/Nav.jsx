@@ -6,12 +6,13 @@ import './Nav.css'
 function Nav(props) {
 
     const { loggedIn, setLoggedIn } = props
-    const { id } = useParams();
+    const uid = window.localStorage.getItem("uid");
     // enables redirect
     const navigate = useNavigate();
 
     const handleClick = () => {
         window.localStorage.removeItem("token");
+        window.localStorage.removeItem("uid");
         setLoggedIn(false);
         navigate("/");
     }
@@ -25,7 +26,7 @@ function Nav(props) {
             <li><Link to="/contactUs" >Contact Us</Link></li>
             <li>{!loggedIn && <Link to="/login" className="btn-account-class">Login In</Link>}</li>
             <li>{!loggedIn && <Link to="/register" className="btn-account-class">Sign Up</Link>}</li>
-            <li>{loggedIn && <Link to={`/viewAccount/${id}`} className="btn">View Account</Link>}</li>
+            <li>{loggedIn && <Link to={`/users/${uid}`} className="btn">View Account</Link>}</li>
             <li>{loggedIn && <button className="btn-account-class" onClick={handleClick}>Sign Out</button>}</li>
         </ul>
         <div>
