@@ -5,7 +5,6 @@ import { useParams ,Link } from "react-router-dom";
 function ViewUser(){
     const [user,setUser] =useState({});
     const {id} =useParams();
-    console.log(id);
     // Adding for User View page 
     useEffect(() => {
         const fetchUser = async () => {

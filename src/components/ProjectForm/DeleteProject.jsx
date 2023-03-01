@@ -19,22 +19,17 @@ function DeleteProject(props){
     });
     }, []);
 
-    const handleYes=(event)=>{
-            // projectList.splice(id-1,1);
-            // // console.log(projectList);
-            // setProjectList([...projectList])
-            // console.log(projectList);
-            // navigate("/");
-
+    const handleYes=(id,event)=>{
             setProjectList((prevProjectList) => {
                 const projects = [...prevProjectList]
                 projects.splice(id-1,1)
                 console.log(projects);
-                navigate("/");
-                return projects
+                return projects;
+                
             });
             
         };
+
     const handleNo=(id)=>{
             navigate("/");
         }
