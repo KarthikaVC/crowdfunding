@@ -30,7 +30,7 @@ function Nav(props) {
             <li>{loggedIn && <button className="btn-account-class" onClick={handleClick}>Sign Out</button>}</li>
         </ul>
         <div>
-        {loggedIn && <Link to="/projects" >Start a Fundraiser</Link>}
+        {loggedIn && <Link to="/projects" className="btn-account-class">Start a Fundraiser</Link>}
         </div>
         </nav>
     );

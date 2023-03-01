@@ -25,9 +25,9 @@ function HomePage(){
     return (
     <div className="container">
     <br/>
-    <div>
+    {/* <div>
         <Link to="/login" className="btn-account-class">Start a Fundraiser</Link>
-    </div>
+    </div> */}
     <br/>
         <h1>Projects</h1>
         <div id="project-list">
