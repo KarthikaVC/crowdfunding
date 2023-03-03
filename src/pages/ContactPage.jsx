@@ -44,7 +44,7 @@ return (
         <label htmlFor="name"></label>
             <input id="name" type="name" name="name" placeholder="Your Name here" required />
             <label htmlFor="email"></label>
-            <input id="email" type="email" name="email" placeholder="Your email here"required />
+            <input id="email" type="email" name="email" placeholder="Your email here" required />
             <label htmlFor="message"></label>
             <textarea id="message" name="message" placeholder="Message here"></textarea>
             <button type="submit" disabled={serverState.submitting}>Submit</button>
