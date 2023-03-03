@@ -117,3 +117,8 @@ form input,textarea{
     width: 90%;
     max-width: 500px;
 }
+.danger-title{
+  color: #e9270d;
+  font-weight: 800;
+  margin-bottom: 20px;
+}

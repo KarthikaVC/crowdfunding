@@ -49,8 +49,8 @@ return (
             <textarea id="message" name="message" placeholder="Message here"></textarea>
             <button type="submit" disabled={serverState.submitting}>Submit</button>
             {serverState.status && (
-            <p className={!serverState.status.ok ? "errorMsg" : ""}>
-            {serverState.status.msg}
+            <p className={!serverState.status.ok ? "errorMsg" : ""}><span className="danger-title">
+            {serverState.status.msg}</span>
             </p>
             )}
         </form>
