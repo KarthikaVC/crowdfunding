@@ -19,7 +19,7 @@ function Nav(props) {
 
     return (
         <nav>
-            <Link to="/" ><img src="public/assets/images/GradeEd.png" className="logo"/></Link>
+            <Link to="/" ><img src="src/images/GradeEd.png" alt="logo" className="logo"/></Link>
         <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about" >About Us</Link></li>
